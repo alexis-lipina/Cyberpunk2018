@@ -1,13 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class EquipmentSystem : MonoBehaviour
 {
-    [SerializeField] private Implant fakeJump;
-    [SerializeField] private Implant fakePunch;
-    [SerializeField] private Implant fakeSuperPunch;
-
     //[SerializeField] private List<Implant>
 
 	// Update is called once per frame
@@ -15,14 +12,19 @@ public class EquipmentSystem : MonoBehaviour
     {
 		if(Input.GetKeyDown(KeyCode.Q))
         {
-            DisableImplant(fakePunch);
-            Debug.Log("Component disabled");
-            Debug.Log("");
+            //DisableImplant(fakePunch);
+            //Debug.Log("Component disabled");
+            //Debug.Log("");
         }
 	}
 
-    private void DisableImplant(Implant implant)
+    public void DisableImplant(string implant)
     {
-        implant.enabled = false;
+        ((Behaviour)transform.GetComponent(Type.GetType(implant))).enabled = false;
+    }
+
+    public void ActivateImplant(string implant)
+    {
+        ((Behaviour)transform.GetComponent(Type.GetType(implant))).enabled = true;
     }
 }
