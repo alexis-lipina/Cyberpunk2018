@@ -53,10 +53,10 @@ public class Jump : MonoBehaviour
             rayHit = raycastHit2s[i];
             
             
-            if (collision.gameObject.name == "Outline" && rayHit.fraction < 0.25)
+            if (collision.gameObject.tag == "Ground" && rayHit.fraction < 0.25)
             {
                 JumpReady = true;
-                Debug.Log("Jump Reset to Collision and Ray");
+                
             }
             i++;
         }
@@ -65,7 +65,7 @@ public class Jump : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-       if( collision.gameObject.name == "Outline" )
+       if( collision.gameObject.tag == "Ground" )
        {
             JumpReady = false;
        }
@@ -94,7 +94,7 @@ public class Jump : MonoBehaviour
         if( rayHit.fraction < 0.25 )
         {
             JumpReady = true;
-            Debug.Log("Jump Reset to Update rayHit");
+            
         }
         else
         {

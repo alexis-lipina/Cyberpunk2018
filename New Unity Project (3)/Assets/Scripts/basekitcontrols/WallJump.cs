@@ -44,7 +44,7 @@ public class WallJump : MonoBehaviour
             rayHit = raycastHit2s[i];
 
 
-            if (collision.gameObject.name == "Outline" && rayHit.fraction < 0.25)
+            if (collision.gameObject.tag == "Ground" && rayHit.fraction < 0.25)
             {
                 JumpPossible = true;
             }
@@ -63,7 +63,7 @@ public class WallJump : MonoBehaviour
             rayHit = raycastHit2s[i];
 
 
-            if (collision.gameObject.name == "Outline" && rayHit.fraction < 0.4)
+            if (collision.gameObject.tag == "Ground" && rayHit.fraction < 0.4)
             {
                 WallJumpRightReady = true;
                 
@@ -81,7 +81,7 @@ public class WallJump : MonoBehaviour
             rayHit = raycastHit2s[i];
 
 
-            if (collision.gameObject.name == "Outline" && rayHit.fraction < 0.4)
+            if (collision.gameObject.tag == "Ground" && rayHit.fraction < 0.4)
             {
                 WallJumpLeftReady = true;
                 
@@ -104,7 +104,7 @@ public class WallJump : MonoBehaviour
             rayHit = raycastHit2s[i];
 
 
-            if (collision.gameObject.name == "Outline" && rayHit.fraction < 0.25)
+            if (collision.gameObject.tag == "Ground" && rayHit.fraction < 0.25)
             {
                 JumpPossible = true;
             }
@@ -123,7 +123,7 @@ public class WallJump : MonoBehaviour
             rayHit = raycastHit2s[i];
 
 
-            if (collision.gameObject.name == "Outline" && rayHit.fraction < 0.4)
+            if (collision.gameObject.tag == "Ground" && rayHit.fraction < 0.4)
             {
                 WallJumpRightReady = true;
                 
@@ -141,7 +141,7 @@ public class WallJump : MonoBehaviour
             rayHit = raycastHit2s[i];
 
 
-            if (collision.gameObject.name == "Outline" && rayHit.fraction < 0.4)
+            if (collision.gameObject.tag == "Ground" && rayHit.fraction < 0.4)
             {
                 WallJumpLeftReady = true;
                 
@@ -154,7 +154,7 @@ public class WallJump : MonoBehaviour
     private void OnCollisionExit2D(Collision2D collision)
     {
         //reset the bools so you can't abuse it.
-        if (collision.gameObject.name == "Outline")
+        if (collision.gameObject.tag == "Ground")
         {
             WallJumpLeftReady = false;
             WallJumpRightReady = false;
@@ -174,22 +174,17 @@ public class WallJump : MonoBehaviour
             rb.AddForce(new Vector2(HorizontalForce, JumpForce), ForceMode2D.Impulse);
              
             
-            Debug.Log("WallJumpLeft");
+            
             WallJumpLeftReady = false;
         }
         else if (Input.GetKeyDown(KeyCode.Space) && WallJumpRightReady && !JumpPossible)
         {
             //reset the velocity so the wall jump has the intended effect
             rb.velocity = new Vector2(0, 0);
-            if (Input.GetKey(KeyCode.RightArrow))
-            {
-                rb.AddForce(new Vector2(-HorizontalForce - 3, JumpForce), ForceMode2D.Impulse);
-            }
-            else
-            {
-                rb.AddForce(new Vector2(-HorizontalForce, JumpForce), ForceMode2D.Impulse);
-            }
-            Debug.Log("WallJumpRight");
+           
+            rb.AddForce(new Vector2(-HorizontalForce, JumpForce), ForceMode2D.Impulse);
+            
+            
             WallJumpRightReady = false;
         } 
     }

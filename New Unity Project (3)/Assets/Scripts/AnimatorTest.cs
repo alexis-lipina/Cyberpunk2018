@@ -2,25 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(PlayerAnimator))]
 public class AnimatorTest : MonoBehaviour {
 
-    private Animator animator;
-    private bool grounded = true;
+    private PlayerAnimator pa;
     private Vector2 movement;
 
 	// Use this for initialization
 	void Awake () {
-        animator = GetComponent<Animator>();
+        pa = GetComponent<PlayerAnimator>();
         movement = new Vector2(0,0);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
-            grounded = !grounded;
-            animator.SetBool("grounded", grounded);
-            Debug.Log("JUMP?");
+            pa.Punch();
+        }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            pa.Shoot();
         }
         movement = new Vector2(0, 0);
         if (Input.GetKey(KeyCode.W))
@@ -39,7 +41,6 @@ public class AnimatorTest : MonoBehaviour {
         {
             movement.x = -1.0f;
         }
-        animator.SetFloat("xVelocity", movement.x);
-        animator.SetFloat("yVelocity", movement.y);
+        pa.MoveVector = movement;
     }
 }
