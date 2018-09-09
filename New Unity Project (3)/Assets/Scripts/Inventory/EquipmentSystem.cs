@@ -5,7 +5,13 @@ using System;
 
 public class EquipmentSystem : MonoBehaviour
 {
-    private List<Implant> enabledImplants = new List<Implant>() { };
+    //private List<Implant> enabledImplants = new List<Implant>() { };
+    private Implant equipmentSlot1;
+    private Implant equipmentSlot2;
+    private Implant eqiupmentSlot3;
+
+    [SerializeField] Implant jump;
+    [SerializeField] Implant horizontal;
 
     /// <summary>
     /// Disables an implant
@@ -16,19 +22,18 @@ public class EquipmentSystem : MonoBehaviour
         //get a reference to the component to disable
         Behaviour toDisable = ((Behaviour)transform.GetComponent(Type.GetType(implant)));
 
-        //ensure base implants overriden by the disabled implant are re enabled after it is removed
-        foreach(Type type in ((Implant)toDisable).IncompatibleTypes)
-        {
-            //change to Jump
-            if(type == typeof(DoubleJump))
-            {
-                //enable Jump
-            }
-            //etc...
-        }
+        ////ensure base implants overriden by the disabled implant are re enabled after it is removed
+        //foreach(Type type in ((Implant)toDisable).IncompatibleTypes)
+        //{
+        //    if(type == typeof(Jump))
+        //    {
+        //        //enable Jump
+        //    }
+        //    //etc...
+        //}
 
         //remove from the list of enabled implants
-        enabledImplants.Remove((Implant)toDisable);
+        //enabledImplants.Remove((Implant)toDisable);
 
         //disable the implant
         toDisable.enabled = false;
@@ -43,21 +48,21 @@ public class EquipmentSystem : MonoBehaviour
         //get a reference to the component to enable
         Behaviour toEnable = ((Behaviour)transform.GetComponent(Type.GetType(implant)));
 
-        foreach(Type type in ((Implant)toEnable).IncompatibleTypes)
-        {
-            for(int i = 0; i < enabledImplants.Count; i++)
-            {
-                if(enabledImplants[i].IncompatibleTypes.Contains(type))
-                {
-                    enabledImplants[i].enabled = false;
-                    enabledImplants.RemoveAt(i);
-                    i--;
-                }
-            }
-        }
+        //foreach(Type type in ((Implant)toEnable).IncompatibleTypes)
+        //{
+        //    //for(int i = 0; i < enabledImplants.Count; i++)
+        //    //{
+        //    //    if(enabledImplants[i].IncompatibleTypes.Contains(type))
+        //    //    {
+        //    //        enabledImplants[i].enabled = false;
+        //    //        enabledImplants.RemoveAt(i);
+        //    //        i--;
+        //    //    }
+        //    //}
+        //}
 
         //add to the lis tof enabled implants
-        enabledImplants.Add((Implant)toEnable);
+        //enabledImplants.Add((Implant)toEnable);
 
         //enable the implant
         toEnable.enabled = true;
