@@ -10,7 +10,7 @@ public class WallHang : MonoBehaviour
     [SerializeField]
     private float HangForce;
 
-   
+
 
     
     [SerializeField]
@@ -49,7 +49,7 @@ public class WallHang : MonoBehaviour
             rayHit = raycastHit2s[i];
 
 
-            if (collision.gameObject.name == "Outline" && rayHit.fraction < 0.25)
+            if (collision.gameObject.tag == "Ground" && rayHit.fraction < 0.25)
             {
                 JumpPossible = true;
                
@@ -69,7 +69,7 @@ public class WallHang : MonoBehaviour
             rayHit = raycastHit2s[i];
 
 
-            if (collision.gameObject.name == "Outline" && rayHit.fraction < 0.25)
+            if (collision.gameObject.tag == "Ground" && rayHit.fraction < 0.25)
             {
                 WallJumpRightReady = true;
                 
@@ -87,7 +87,7 @@ public class WallHang : MonoBehaviour
             rayHit = raycastHit2s[i];
 
 
-            if (collision.gameObject.name == "Outline" && rayHit.fraction < 0.25)
+            if (collision.gameObject.tag == "Ground" && rayHit.fraction < 0.25)
             {
                 WallJumpLeftReady = true;
                 
@@ -109,7 +109,7 @@ public class WallHang : MonoBehaviour
             rayHit = raycastHit2s[i];
 
 
-            if (collision.gameObject.name == "Outline" && rayHit.fraction < 0.25)
+            if (collision.gameObject.tag == "Ground" && rayHit.fraction < 0.25)
             {
                 JumpPossible = true;
             }
@@ -128,7 +128,7 @@ public class WallHang : MonoBehaviour
             rayHit = raycastHit2s[i];
 
 
-            if (collision.gameObject.name == "Outline" && rayHit.fraction < 0.4)
+            if (collision.gameObject.tag == "Ground" && rayHit.fraction < 0.4)
             {
                 WallJumpRightReady = true;
 
@@ -146,7 +146,7 @@ public class WallHang : MonoBehaviour
             rayHit = raycastHit2s[i];
 
 
-            if (collision.gameObject.name == "Outline" && rayHit.fraction < 0.4)
+            if (collision.gameObject.tag == "Ground" && rayHit.fraction < 0.4)
             {
                 WallJumpLeftReady = true;
 
@@ -157,7 +157,7 @@ public class WallHang : MonoBehaviour
     private void OnCollisionExit2D(Collision2D collision)
     {
         //reset the bools so you can't abuse it.
-        if (collision.gameObject.name == "Outline")
+        if (collision.gameObject.tag == "Ground")
         {
             WallJumpLeftReady = false;
             WallJumpRightReady = false;
@@ -181,7 +181,7 @@ public class WallHang : MonoBehaviour
                 rb.AddForce(new Vector2(5, 0), ForceMode2D.Impulse);
             }
             
-            Debug.Log("Friction applied");
+            
 
         }
         else
@@ -199,7 +199,7 @@ public class WallHang : MonoBehaviour
                 rb.AddForce(new Vector2(-5, 0), ForceMode2D.Impulse);
             }
 
-            Debug.Log("Friction applied");
+           
         }
         else
         {

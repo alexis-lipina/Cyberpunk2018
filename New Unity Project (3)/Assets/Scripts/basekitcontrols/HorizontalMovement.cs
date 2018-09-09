@@ -49,7 +49,7 @@ public class HorizontalMovement : MonoBehaviour
             rayHit = raycastHit2s[i];
 
 
-            if (collision.gameObject.name == "Outline" && rayHit.fraction < 0.25)
+            if (collision.gameObject.tag == "Ground" && rayHit.fraction < 0.25)
             {
                 JumpPossible = true;
                 HasWallJumped = false;
@@ -69,7 +69,7 @@ public class HorizontalMovement : MonoBehaviour
             rayHit = raycastHit2s[i];
 
 
-            if (collision.gameObject.name == "Outline" && rayHit.fraction < 0.25)
+            if (collision.gameObject.tag == "Ground" && rayHit.fraction < 0.25)
             {
                 WallJumpRightReady = true;
                 HasWallJumped = false;
@@ -87,7 +87,7 @@ public class HorizontalMovement : MonoBehaviour
             rayHit = raycastHit2s[i];
 
 
-            if (collision.gameObject.name == "Outline" && rayHit.fraction < 0.25)
+            if (collision.gameObject.tag == "Ground" && rayHit.fraction < 0.25)
             {
                 WallJumpLeftReady = true;
                 
@@ -109,7 +109,7 @@ public class HorizontalMovement : MonoBehaviour
             rayHit = raycastHit2s[i];
 
 
-            if (collision.gameObject.name == "Outline" && rayHit.fraction < 0.25)
+            if (collision.gameObject.tag == "Ground" && rayHit.fraction < 0.25)
             {
                 JumpPossible = true;
             }
@@ -128,7 +128,7 @@ public class HorizontalMovement : MonoBehaviour
             rayHit = raycastHit2s[i];
 
 
-            if (collision.gameObject.name == "Outline" && rayHit.fraction < 0.4)
+            if (collision.gameObject.tag == "Ground" && rayHit.fraction < 0.4)
             {
                 WallJumpRightReady = true;
 
@@ -146,7 +146,7 @@ public class HorizontalMovement : MonoBehaviour
             rayHit = raycastHit2s[i];
 
 
-            if (collision.gameObject.name == "Outline" && rayHit.fraction < 0.4)
+            if (collision.gameObject.tag == "Ground" && rayHit.fraction < 0.4)
             {
                 WallJumpLeftReady = true;
 
@@ -157,7 +157,7 @@ public class HorizontalMovement : MonoBehaviour
     private void OnCollisionExit2D(Collision2D collision)
     {
         //reset the bools so you can't abuse it.
-        if (collision.gameObject.name == "Outline")
+        if (collision.gameObject.tag == "Ground")
         {
             WallJumpLeftReady = false;
             WallJumpRightReady = false;
