@@ -1,4 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+guid: ed77934bc67757d478c4240a76239655
+TextureImporter:
+  fileIDToRecycleName: {}
+=======
 guid: 454f2e94b5a89544689f327801fdc909
 TextureImporter:
   fileIDToRecycleName:
@@ -18,6 +23,7 @@ TextureImporter:
     21300026: BasicEnvironmentTiles_13
     21300028: BasicEnvironmentTiles_14
     21300030: BasicEnvironmentTiles_15
+>>>>>>> bfe512897343f4219a6cde4507da0b1d80dc51d5
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -47,7 +53,11 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
+<<<<<<< HEAD
+    filterMode: -1
+=======
     filterMode: 0
+>>>>>>> bfe512897343f4219a6cde4507da0b1d80dc51d5
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -56,12 +66,20 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
+<<<<<<< HEAD
+  spriteMode: 1
+=======
   spriteMode: 2
+>>>>>>> bfe512897343f4219a6cde4507da0b1d80dc51d5
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
+<<<<<<< HEAD
+  spritePixelsToUnits: 100
+=======
   spritePixelsToUnits: 16
+>>>>>>> bfe512897343f4219a6cde4507da0b1d80dc51d5
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -79,6 +97,9 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
+<<<<<<< HEAD
+    textureCompression: 1
+=======
     textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
@@ -102,6 +123,7 @@ TextureImporter:
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
+>>>>>>> bfe512897343f4219a6cde4507da0b1d80dc51d5
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -109,6 +131,13 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
+<<<<<<< HEAD
+    sprites: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e51527296c671d49b214480ba8028c4
+=======
     sprites:
     - serializedVersion: 2
       name: BasicEnvironmentTiles_0
@@ -434,6 +463,7 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 7a2a9610c4bbf3848b9393e5b2229c40
+>>>>>>> bfe512897343f4219a6cde4507da0b1d80dc51d5
     vertices: []
     indices: 
     edges: []

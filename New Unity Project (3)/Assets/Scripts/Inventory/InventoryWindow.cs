@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class InventoryWindow : MonoBehaviour
 {
+    [SerializeField] private EquipmentSystem playerEquipment;
+
     //ui parenting related
     [SerializeField] private Canvas canvas;
     [SerializeField] private GameObject inventoryPanel;
@@ -13,12 +15,20 @@ public class InventoryWindow : MonoBehaviour
     [SerializeField] private GameObject equipmentSlot1;
     [SerializeField] private GameObject equipmentSlot2;
 
+    /// <summary>
+    /// Called when an implant is clicked on from the implant menu
+    /// </summary>
+    /// <param name="implant">The implant in question</param>
     public void ImplantClicked(Button implant)
     {
         implant.transform.SetParent(canvas.transform,false);
         implant.gameObject.GetComponent<FollowMouse>().Following = true;
     }
 
+    /// <summary>
+    /// Called when an implant is released in the implant menu
+    /// </summary>
+    /// <param name="implant">The implant in question</param>
     public void ImplantReleased(Button implant)
     {
         //get position of the first slot
@@ -40,8 +50,12 @@ public class InventoryWindow : MonoBehaviour
             {
                 foreach(Transform child in equipmentSlot1.transform)
                 {
+                    //move UI
                     child.SetParent(inventoryPanel.transform, false);
                     child.gameObject.GetComponent<FollowMouse>().Following = false;
+
+                    //disable component
+                    playerEquipment.DisableImplant(child.gameObject.name);
                 }
             }
 
@@ -53,6 +67,9 @@ public class InventoryWindow : MonoBehaviour
             rectTransform.anchorMax = new Vector2(.5f, .5f);
             rectTransform.pivot = new Vector2(.5f, .5f);
             rectTransform.anchoredPosition = Vector2.zero;
+
+            //enable the new component
+            playerEquipment.ActivateImplant(implant.gameObject.name);
         }
         //check if implant is being released over the second slot
         else if(mousePos.x >= secondSlotCorners[0].x && mousePos.x <= secondSlotCorners[3].x && mousePos.y >= secondSlotCorners[0].y && mousePos.y <= secondSlotCorners[1].y)
@@ -62,8 +79,12 @@ public class InventoryWindow : MonoBehaviour
             {
                 foreach (Transform child in equipmentSlot2.transform)
                 {
+                    //move UI
                     child.SetParent(inventoryPanel.transform, false);
                     child.gameObject.GetComponent<FollowMouse>().Following = false;
+
+                    //diable component
+                    playerEquipment.DisableImplant(child.gameObject.name);
                 }
             }
 
@@ -75,11 +96,17 @@ public class InventoryWindow : MonoBehaviour
             rectTransform.anchorMax = new Vector2(.5f, .5f);
             rectTransform.pivot = new Vector2(.5f, .5f);
             rectTransform.anchoredPosition = Vector2.zero;
+
+            //enable the new component
+            playerEquipment.ActivateImplant(implant.gameObject.name);
         }
         else 
         {
             implant.transform.SetParent(inventoryPanel.transform, false);
             implant.gameObject.GetComponent<FollowMouse>().Following = false;
+
+            //disable component incase it was being removed
+            playerEquipment.DisableImplant(implant.gameObject.name);
         }
     }
 }

@@ -127,7 +127,7 @@ GameObject:
   - component: {fileID: 15907565}
   - component: {fileID: 15907569}
   m_Layer: 5
-  m_Name: Jump
+  m_Name: FakeJump
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -503,6 +503,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07faddd9101e29c44a51bbc5619eb499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerEquipment: {fileID: 1019734920}
   canvas: {fileID: 613348079}
   inventoryPanel: {fileID: 869434663}
   equipmentSlot1: {fileID: 1586270526}
@@ -574,7 +575,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Super Punch
+  m_Text: FakeSuperPunch
 --- !u!222 &704805675
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -610,7 +611,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1519279568}
+  - {fileID: 1923220774}
   m_Father: {fileID: 613348080}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -742,9 +743,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Punch
-
-'
+  m_Text: FakePunch
 --- !u!222 &904973425
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -780,7 +779,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1019734912}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7804a86eb325c794594fc5f0fe8dd858, type: 3}
   m_Name: 
@@ -885,9 +884,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e7220481610d174191d51b7490cb356, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fakeJump: {fileID: 1019734915}
-  fakePunch: {fileID: 1019734914}
-  fakeSuperPunch: {fileID: 1019734913}
 --- !u!1 &1086934299
 GameObject:
   m_ObjectHideFlags: 0
@@ -949,7 +945,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1923220774}
+  - {fileID: 1519279568}
   m_Father: {fileID: 1164267162}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1133,7 +1129,7 @@ GameObject:
   - component: {fileID: 1519279572}
   - component: {fileID: 1519279573}
   m_Layer: 5
-  m_Name: Punch
+  m_Name: FakePunch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1150,12 +1146,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 904973423}
-  m_Father: {fileID: 869434664}
+  m_Father: {fileID: 1086934302}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 80, y: -15}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1519279569
@@ -1452,7 +1448,7 @@ GameObject:
   - component: {fileID: 1923220776}
   - component: {fileID: 1923220775}
   m_Layer: 5
-  m_Name: SuperPunch
+  m_Name: FakeSuperPunch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1469,12 +1465,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 704805673}
-  m_Father: {fileID: 1086934302}
+  m_Father: {fileID: 869434664}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 80, y: -15}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1923220775

@@ -1,28 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class EquipmentSystem : MonoBehaviour
 {
-    [SerializeField] private Implant fakeJump;
-    [SerializeField] private Implant fakePunch;
-    [SerializeField] private Implant fakeSuperPunch;
-
-    //[SerializeField] private List<Implant>
-
-	// Update is called once per frame
-	void Update ()
+    /// <summary>
+    /// Disables an implant
+    /// </summary>
+    /// <param name="implant">Name of implant to disable</param>
+    public void DisableImplant(string implant)
     {
-		if(Input.GetKeyDown(KeyCode.Q))
-        {
-            DisableImplant(fakePunch);
-            Debug.Log("Component disabled");
-            Debug.Log("");
-        }
-	}
+        ((Behaviour)transform.GetComponent(Type.GetType(implant))).enabled = false;
+    }
 
-    private void DisableImplant(Implant implant)
+    /// <summary>
+    /// Enables and implant
+    /// </summary>
+    /// <param name="implant">Name of implant to enable</param>
+    public void ActivateImplant(string implant)
     {
-        implant.enabled = false;
+        ((Behaviour)transform.GetComponent(Type.GetType(implant))).enabled = true;
     }
 }

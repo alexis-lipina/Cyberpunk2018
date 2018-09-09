@@ -4,8 +4,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class BasicMovement : MonoBehaviour
-{
-    
+{    
     private Rigidbody2D rb;
     [SerializeField]
     private float JumpForce;
