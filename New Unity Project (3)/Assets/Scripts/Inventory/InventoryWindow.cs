@@ -109,4 +109,9 @@ public class InventoryWindow : MonoBehaviour
             playerEquipment.DisableImplant(implant.gameObject.name);
         }
     }
+
+    public void SendBackToInventory(int equipmentSlot)
+    {
+
+    }
 }
