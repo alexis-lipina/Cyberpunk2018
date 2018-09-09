@@ -19,7 +19,7 @@ public class WallJump : MonoBehaviour
     RaycastHit2D rayHit;
     RaycastHit2D[] raycastHit2s = new RaycastHit2D[20];
 
-    //Keep these for now (add to WallJump)
+    //Keep track of the player's ability to Wall Jump
     private bool WallJumpLeftReady = false;
     private bool WallJumpRightReady = false;
     private bool JumpPossible = false;
@@ -113,7 +113,7 @@ public class WallJump : MonoBehaviour
 
         casthits = 0;
 
-        //Right
+        //Right Wall Jump check
         casthits = castingCollider.Cast(new Vector2(1, 0), raycastHit2s, 1);
 
         i = 0;
@@ -131,7 +131,7 @@ public class WallJump : MonoBehaviour
             i++;
         }
 
-        //Left
+        //Left Wall Jump Check
         casthits = castingCollider.Cast(new Vector2(-1, 0), raycastHit2s, 1);
 
         i = 0;
