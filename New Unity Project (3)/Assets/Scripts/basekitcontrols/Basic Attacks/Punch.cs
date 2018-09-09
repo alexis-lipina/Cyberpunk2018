@@ -8,8 +8,7 @@ public class Punch : MonoBehaviour {
     Rigidbody2D rb;
     bool PunchOver = false;
 
-    RaycastHit2D rayHit;
-    RaycastHit2D[] raycastHit2s = new RaycastHit2D[20];
+
 
 
     [SerializeField]
@@ -53,7 +52,6 @@ public class Punch : MonoBehaviour {
                 if (punchCollider.offset.x < 0.5f)
                 {
                     punchCollider.offset = new Vector2(punchCollider.offset.x + 0.01f, punchCollider.offset.y);
-                    rb.AddForce(new Vector2(-rb.velocity.x, 0), ForceMode2D.Impulse);
                     Debug.Log("Pumch");
                 }
                 else
@@ -66,7 +64,6 @@ public class Punch : MonoBehaviour {
                 if (punchCollider.offset.x > -0.5f)
                 {
                     punchCollider.offset = new Vector2(punchCollider.offset.x - 0.01f, punchCollider.offset.y);
-                    rb.AddForce(new Vector2(-rb.velocity.x, 0), ForceMode2D.Impulse);
                     Debug.Log("Pumch");
                 }
                 else
