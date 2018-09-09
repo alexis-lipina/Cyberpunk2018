@@ -5,7 +5,7 @@ using System;
 
 public abstract class Implant : MonoBehaviour
 {
-    protected List<Type> incompatibleTypes;
+    protected List<Type> incompatibleTypes = new List<Type>();
 
     public List<Type> IncompatibleTypes { get { return incompatibleTypes; } set { incompatibleTypes = value; } }
 }

@@ -19,9 +19,9 @@ public class BasicProjectile : MonoBehaviour
 
             projectile.gameObject.SetActive(true);
 
-            projectile.transform.localPosition = new Vector3(.2f * -1, 0);
+            projectile.transform.localPosition = new Vector3(.2f * transform.GetComponent<HorizontalMovement>().LeftRight, 0);
 
-            projectile.Shoot(1 * -1);
+            projectile.Shoot(1 * transform.GetComponent<HorizontalMovement>().LeftRight);
         }
 	}
 }
