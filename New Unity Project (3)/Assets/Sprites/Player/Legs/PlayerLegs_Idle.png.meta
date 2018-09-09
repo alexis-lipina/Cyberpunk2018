@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c125c618a76aa774c961e3b1e9db32da
+guid: 130dd698fb59d9740b937e4998c7ce07
 TextureImporter:
   fileIDToRecycleName:
     21300000: PlayerLegs_Idle_0
@@ -113,7 +113,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3b03f60ba53b67445a107cfc4065819d
+      spriteID: c03881b68f26515498931cadc93063c4
       vertices: []
       indices: 
       edges: []
@@ -133,7 +133,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 28a32eb15dce6c54d959d1534c76c02a
+      spriteID: 62cabe06e9f1dd3419311667182782b5
       vertices: []
       indices: 
       edges: []
@@ -153,7 +153,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2119723a37894f14fb728924bd77d00e
+      spriteID: 8e4d4a9589d8fb547a4c0cb7ae022cbb
       vertices: []
       indices: 
       edges: []
@@ -173,7 +173,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fd0241a28961a1445b1edb8f07be7d06
+      spriteID: 6f6c52e5112453642ab16ee5d668b844
       vertices: []
       indices: 
       edges: []
@@ -181,7 +181,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 261c24d8223db494b94e3a84abe8f958
+    spriteID: 915a139cc1a07f64bb0bca7ad64f2fe8
     vertices: []
     indices: 
     edges: []
