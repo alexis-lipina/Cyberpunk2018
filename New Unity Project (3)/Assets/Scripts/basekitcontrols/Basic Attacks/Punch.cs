@@ -6,14 +6,11 @@ public class Punch : MonoBehaviour {
 
     //Fields
     Rigidbody2D rb;
-    bool OnGround = false;
     bool PunchOver = false;
 
     RaycastHit2D rayHit;
     RaycastHit2D[] raycastHit2s = new RaycastHit2D[20];
 
-    [SerializeField]
-    CircleCollider2D castCollider;
 
     [SerializeField]
     private BoxCollider2D punchCollider;
@@ -29,40 +26,55 @@ public class Punch : MonoBehaviour {
 
         if( collision.gameObject.tag == "Ground")
         {
-            OnGround = true;
             PunchOver = false;
         }
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
+    private void OnCollisionStay2D(Collision2D collision)
     {
-        castCollider.Cast(new Vector2(0, -1), raycastHit2s);
-        rayHit = raycastHit2s[0];
-
-        if( collision.gameObject.tag == "Ground" && rayHit.fraction < 0.25)
+        if (collision.gameObject.tag == "Ground"  && !punchCollider.enabled)
         {
-            OnGround = false;
+            PunchOver = false;
         }
     }
+
     // Update is called once per frame
     void Update ()
     {
-		if( !PunchOver && OnGround && Input.GetMouseButtonDown(0) && !punchCollider.enabled)
+		if( !PunchOver && Input.GetMouseButtonDown(0) && !punchCollider.enabled)
         {
             punchCollider.enabled = true; 
         }
       
-        if(!PunchOver && OnGround && punchCollider.enabled )
+        if(!PunchOver && punchCollider.enabled )
         {
-            if (punchCollider.offset.x < 0.5f)
+            if( gameObject.GetComponent<HorizontalMovement>().LeftRight == 1)
             {
-                punchCollider.offset = new Vector2(punchCollider.offset.x + 0.01f, punchCollider.offset.y);
-                rb.AddForce(new Vector2(-rb.velocity.x, 0), ForceMode2D.Impulse);
+                if (punchCollider.offset.x < 0.5f)
+                {
+                    punchCollider.offset = new Vector2(punchCollider.offset.x + 0.01f, punchCollider.offset.y);
+                    rb.AddForce(new Vector2(-rb.velocity.x, 0), ForceMode2D.Impulse);
+                    Debug.Log("Pumch");
+                }
+                else
+                {
+                    PunchOver = true;
+                }
             }
             else
             {
-                PunchOver = true;
+                if (punchCollider.offset.x > -0.5f)
+                {
+                    punchCollider.offset = new Vector2(punchCollider.offset.x - 0.01f, punchCollider.offset.y);
+                    rb.AddForce(new Vector2(-rb.velocity.x, 0), ForceMode2D.Impulse);
+                    Debug.Log("Pumch");
+                }
+                else
+                {
+                    PunchOver = true;
+                }
             }
+            
         }
         else
         {
