@@ -60,7 +60,7 @@ public class InventoryWindow : MonoBehaviour
                     child.gameObject.GetComponent<FollowMouse>().Following = false;
 
                     //disable component
-                    playerEquipment.DisableImplant(child.gameObject.name);
+                    playerEquipment.DisableImplant(child.gameObject.name, 1);
                 }
             }
 
@@ -74,7 +74,7 @@ public class InventoryWindow : MonoBehaviour
             rectTransform.anchoredPosition = Vector2.zero;
 
             //enable the new component
-            playerEquipment.ActivateImplant(implant.gameObject.name);
+            playerEquipment.ActivateImplant(implant.gameObject.name, 1);
         }
         //check if implant is being released over the second slot
         else if(mousePos.x >= secondSlotCorners[0].x && mousePos.x <= secondSlotCorners[3].x && mousePos.y >= secondSlotCorners[0].y && mousePos.y <= secondSlotCorners[1].y)
@@ -89,7 +89,7 @@ public class InventoryWindow : MonoBehaviour
                     child.gameObject.GetComponent<FollowMouse>().Following = false;
 
                     //diable component
-                    playerEquipment.DisableImplant(child.gameObject.name);
+                    playerEquipment.DisableImplant(child.gameObject.name, 2);
                 }
             }
 
@@ -103,7 +103,7 @@ public class InventoryWindow : MonoBehaviour
             rectTransform.anchoredPosition = Vector2.zero;
 
             //enable the new component
-            playerEquipment.ActivateImplant(implant.gameObject.name);
+            playerEquipment.ActivateImplant(implant.gameObject.name, 2);
         }
         //check if implant is being released over the third slot
         else if (mousePos.x >= thirdSlotCorners[0].x && mousePos.x <= thirdSlotCorners[3].x && mousePos.y >= thirdSlotCorners[0].y && mousePos.y <= thirdSlotCorners[1].y)
@@ -118,7 +118,7 @@ public class InventoryWindow : MonoBehaviour
                     child.gameObject.GetComponent<FollowMouse>().Following = false;
 
                     //diable component
-                    playerEquipment.DisableImplant(child.gameObject.name);
+                    playerEquipment.DisableImplant(child.gameObject.name, 3);
                 }
             }
 
@@ -132,7 +132,7 @@ public class InventoryWindow : MonoBehaviour
             rectTransform.anchoredPosition = Vector2.zero;
 
             //enable the new component
-            playerEquipment.ActivateImplant(implant.gameObject.name);
+            playerEquipment.ActivateImplant(implant.gameObject.name, 3);
         }
         else 
         {
@@ -140,7 +140,7 @@ public class InventoryWindow : MonoBehaviour
             implant.gameObject.GetComponent<FollowMouse>().Following = false;
 
             //disable component incase it was being removed
-            playerEquipment.DisableImplant(implant.gameObject.name);
+            playerEquipment.DisableImplant(implant.gameObject.name, 3);
         }
     }
 
