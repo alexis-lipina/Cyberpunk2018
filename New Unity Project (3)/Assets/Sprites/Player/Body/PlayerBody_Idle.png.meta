@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-guid: 2eae8443515844e459be4031342902e0
-=======
-guid: 04b5c48f104d6a440ba46e8e02649130
->>>>>>> 5f00a1a6184f70b8c43d016d268bb4895b3c3abe
+guid: 47ecb775f0a89284d96a2cb5a0dcc89e
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: PlayerBody_Idle_0
+    21300002: PlayerBody_Idle_1
+    21300004: PlayerBody_Idle_2
+    21300006: PlayerBody_Idle_3
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -35,11 +35,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-<<<<<<< HEAD
-    filterMode: -1
-=======
     filterMode: 0
->>>>>>> 5f00a1a6184f70b8c43d016d268bb4895b3c3abe
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -48,16 +44,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-<<<<<<< HEAD
-  spritePixelsToUnits: 100
-=======
   spritePixelsToUnits: 16
->>>>>>> 5f00a1a6184f70b8c43d016d268bb4895b3c3abe
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,9 +67,6 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-<<<<<<< HEAD
-    textureCompression: 1
-=======
     textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
@@ -101,7 +90,6 @@ TextureImporter:
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
->>>>>>> 5f00a1a6184f70b8c43d016d268bb4895b3c3abe
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -109,15 +97,91 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: PlayerBody_Idle_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 20
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58fa25e0f730fcb44b5bf482e466980f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerBody_Idle_1
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 0
+        width: 20
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90452758f51f0874c963ded29933a54e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerBody_Idle_2
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 0
+        width: 20
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4571462b68a0fb47a99a9b06034402e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerBody_Idle_3
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 0
+        width: 20
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5119d87f0ba522f438f5a31f35473556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-<<<<<<< HEAD
-    spriteID: a42ccbafc0d1df443a1b2ec2bc127f81
-=======
-    spriteID: c55dcc112ed3df14f8c30275790d1b71
->>>>>>> 5f00a1a6184f70b8c43d016d268bb4895b3c3abe
+    spriteID: 35a26d3a8d619e446926eecf1230b686
     vertices: []
     indices: 
     edges: []

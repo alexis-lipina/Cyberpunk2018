@@ -1,11 +1,9 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-guid: 2eae8443515844e459be4031342902e0
-=======
-guid: 04b5c48f104d6a440ba46e8e02649130
->>>>>>> 5f00a1a6184f70b8c43d016d268bb4895b3c3abe
+guid: b3304ac5b94d4284f97ee6618ea9207e
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: PlayerLegs_Jump_0
+    21300002: PlayerLegs_Jump_1
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -35,11 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-<<<<<<< HEAD
-    filterMode: -1
-=======
     filterMode: 0
->>>>>>> 5f00a1a6184f70b8c43d016d268bb4895b3c3abe
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -48,16 +42,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-<<<<<<< HEAD
-  spritePixelsToUnits: 100
-=======
   spritePixelsToUnits: 16
->>>>>>> 5f00a1a6184f70b8c43d016d268bb4895b3c3abe
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,9 +65,6 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-<<<<<<< HEAD
-    textureCompression: 1
-=======
     textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
@@ -101,7 +88,6 @@ TextureImporter:
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
->>>>>>> 5f00a1a6184f70b8c43d016d268bb4895b3c3abe
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -109,15 +95,51 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: PlayerLegs_Jump_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 20
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f7813b4647bc104290e53e14004bb33
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerLegs_Jump_1
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 0
+        width: 20
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76f88f7eb89f3d04ca32338b6debfa0e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-<<<<<<< HEAD
-    spriteID: a42ccbafc0d1df443a1b2ec2bc127f81
-=======
-    spriteID: c55dcc112ed3df14f8c30275790d1b71
->>>>>>> 5f00a1a6184f70b8c43d016d268bb4895b3c3abe
+    spriteID: 31a37371edee00545998f18c57b2aedd
     vertices: []
     indices: 
     edges: []

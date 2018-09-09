@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-guid: 2eae8443515844e459be4031342902e0
-=======
-guid: 04b5c48f104d6a440ba46e8e02649130
->>>>>>> 5f00a1a6184f70b8c43d016d268bb4895b3c3abe
+guid: c125c618a76aa774c961e3b1e9db32da
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: PlayerLegs_Idle_0
+    21300002: PlayerLegs_Idle_1
+    21300004: PlayerLegs_Idle_2
+    21300006: PlayerLegs_Idle_3
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -35,11 +35,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-<<<<<<< HEAD
-    filterMode: -1
-=======
     filterMode: 0
->>>>>>> 5f00a1a6184f70b8c43d016d268bb4895b3c3abe
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -48,16 +44,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-<<<<<<< HEAD
-  spritePixelsToUnits: 100
-=======
   spritePixelsToUnits: 16
->>>>>>> 5f00a1a6184f70b8c43d016d268bb4895b3c3abe
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,9 +67,6 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-<<<<<<< HEAD
-    textureCompression: 1
-=======
     textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
@@ -101,7 +90,6 @@ TextureImporter:
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
->>>>>>> 5f00a1a6184f70b8c43d016d268bb4895b3c3abe
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -109,15 +97,91 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: PlayerLegs_Idle_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 20
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b03f60ba53b67445a107cfc4065819d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerLegs_Idle_1
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 0
+        width: 20
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28a32eb15dce6c54d959d1534c76c02a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerLegs_Idle_2
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 0
+        width: 20
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2119723a37894f14fb728924bd77d00e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerLegs_Idle_3
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 0
+        width: 20
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd0241a28961a1445b1edb8f07be7d06
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-<<<<<<< HEAD
-    spriteID: a42ccbafc0d1df443a1b2ec2bc127f81
-=======
-    spriteID: c55dcc112ed3df14f8c30275790d1b71
->>>>>>> 5f00a1a6184f70b8c43d016d268bb4895b3c3abe
+    spriteID: 261c24d8223db494b94e3a84abe8f958
     vertices: []
     indices: 
     edges: []
