@@ -13,8 +13,10 @@ public class BasicMovement : MonoBehaviour
     private float WalkForce;
 
     private bool JumpReady = false;
-	// Use this for initialization
-	void Start ()
+    private bool WallJumpLeftReady = false;
+    private bool WallJumpRightReady = false;
+    // Use this for initialization
+    void Start ()
     {
         rb = GetComponent<Rigidbody2D>();
 
@@ -23,10 +25,18 @@ public class BasicMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if( collision.gameObject.name == "Platform")
+        if( collision.gameObject.name == "Outline")
         {
             JumpReady = true;
         }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+       if( collision.gameObject.name == "Outline" )
+       {
+            JumpReady = false;
+       }
     }
     // Update is called once per frame
     void Update ()
@@ -55,5 +65,13 @@ public class BasicMovement : MonoBehaviour
             rb.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
             JumpReady = false;
         }
-	}
+        else if(Input.GetKeyDown(KeyCode.Space) && WallJumpLeftReady)
+        {
+
+        }
+        else if (Input.GetKeyDown(KeyCode.Space) && WallJumpRightReady)
+        {
+
+        }
+    }
 }
