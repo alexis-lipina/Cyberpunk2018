@@ -15,12 +15,20 @@ public class InventoryWindow : MonoBehaviour
     [SerializeField] private GameObject equipmentSlot1;
     [SerializeField] private GameObject equipmentSlot2;
 
+    /// <summary>
+    /// Called when an implant is clicked on from the implant menu
+    /// </summary>
+    /// <param name="implant">The implant in question</param>
     public void ImplantClicked(Button implant)
     {
         implant.transform.SetParent(canvas.transform,false);
         implant.gameObject.GetComponent<FollowMouse>().Following = true;
     }
 
+    /// <summary>
+    /// Called when an implant is released in the implant menu
+    /// </summary>
+    /// <param name="implant">The implant in question</param>
     public void ImplantReleased(Button implant)
     {
         //get position of the first slot
