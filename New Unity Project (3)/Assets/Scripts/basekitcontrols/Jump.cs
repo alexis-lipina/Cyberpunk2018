@@ -56,7 +56,7 @@ public class Jump : MonoBehaviour
             if (collision.gameObject.name == "Outline" && rayHit.fraction < 0.25)
             {
                 JumpReady = true;
-                Debug.Log("Jump Reset to Collision and Ray");
+                
             }
             i++;
         }
@@ -94,7 +94,7 @@ public class Jump : MonoBehaviour
         if( rayHit.fraction < 0.25 )
         {
             JumpReady = true;
-            Debug.Log("Jump Reset to Update rayHit");
+            
         }
         else
         {

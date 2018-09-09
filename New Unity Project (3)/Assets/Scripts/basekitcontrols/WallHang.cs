@@ -10,7 +10,7 @@ public class WallHang : MonoBehaviour
     [SerializeField]
     private float HangForce;
 
-   
+
 
     
     [SerializeField]
@@ -181,7 +181,7 @@ public class WallHang : MonoBehaviour
                 rb.AddForce(new Vector2(5, 0), ForceMode2D.Impulse);
             }
             
-            Debug.Log("Friction applied");
+            
 
         }
         else
@@ -199,7 +199,7 @@ public class WallHang : MonoBehaviour
                 rb.AddForce(new Vector2(-5, 0), ForceMode2D.Impulse);
             }
 
-            Debug.Log("Friction applied");
+           
         }
         else
         {

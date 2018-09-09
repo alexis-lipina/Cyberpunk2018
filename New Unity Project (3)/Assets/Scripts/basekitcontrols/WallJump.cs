@@ -174,7 +174,7 @@ public class WallJump : MonoBehaviour
             rb.AddForce(new Vector2(HorizontalForce, JumpForce), ForceMode2D.Impulse);
              
             
-            Debug.Log("WallJumpLeft");
+            
             WallJumpLeftReady = false;
         }
         else if (Input.GetKeyDown(KeyCode.Space) && WallJumpRightReady && !JumpPossible)
@@ -184,7 +184,7 @@ public class WallJump : MonoBehaviour
            
             rb.AddForce(new Vector2(-HorizontalForce, JumpForce), ForceMode2D.Impulse);
             
-            Debug.Log("WallJumpRight");
+            
             WallJumpRightReady = false;
         } 
     }
