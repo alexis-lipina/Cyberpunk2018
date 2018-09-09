@@ -10,7 +10,7 @@ public class HorizontalMovement : MonoBehaviour
     [SerializeField]
     private float WalkForce;
 
-    public bool LeftRight = true; //True = right, false = left
+    public int LeftRight = 1; //1 = right, -1 = left
 
     private bool HasWallJumped = false; 
     [SerializeField]
@@ -182,7 +182,7 @@ public class HorizontalMovement : MonoBehaviour
             { 
                 rb.velocity = new Vector2(0, rb.velocity.y);
                 rb.AddForce(new Vector2(WalkForce, 0), ForceMode2D.Impulse);
-                LeftRight = true;
+                LeftRight = 1;
             }
             
         }
@@ -203,7 +203,7 @@ public class HorizontalMovement : MonoBehaviour
             {
                 rb.velocity = new Vector2(0, rb.velocity.y);
                 rb.AddForce(new Vector2(-WalkForce, 0), ForceMode2D.Impulse);
-                LeftRight = false;
+                LeftRight = -1;
             }
             
         }
