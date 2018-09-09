@@ -19,13 +19,11 @@ public class HorizontalMovement : MonoBehaviour
     RaycastHit2D rayHit;
     RaycastHit2D[] raycastHit2s = new RaycastHit2D[20];
 
-    //Keep these for now (add to WallJump)
+    //These keep track of the player's ability to walljump.
     private bool WallJumpLeftReady = false;
     private bool WallJumpRightReady = false;
     private bool JumpPossible = false;
-    //Keep these for now (add to WallJump)
-    //private bool WallJumpLeftReady = false;
-    //private bool WallJumpRightReady = false;
+
     // Use this for initialization
     void Start ()
     {
@@ -33,6 +31,8 @@ public class HorizontalMovement : MonoBehaviour
 
     }
 
+    //These methods are used to track the WallJumpStatus of the Player, so we don't apply the force when we want to wall jump.
+    //They are functionally the same as the ones found in WallJump.cs
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //make sure a regular jump ins't possible
@@ -93,7 +93,6 @@ public class HorizontalMovement : MonoBehaviour
         }
 
     }
-
     private void OnCollisionStay2D(Collision2D collision)
     {
         //make sure a regular jump ins't possible
@@ -152,7 +151,6 @@ public class HorizontalMovement : MonoBehaviour
             i++;
         }
     }
-
     private void OnCollisionExit2D(Collision2D collision)
     {
         //reset the bools so you can't abuse it.
@@ -174,6 +172,7 @@ public class HorizontalMovement : MonoBehaviour
                 HasWallJumped = true;
             }
             
+            //If the player has wall jumped we don't want the player to just scale up the wall they 
             if(HasWallJumped)
             {
 
@@ -212,16 +211,6 @@ public class HorizontalMovement : MonoBehaviour
             rb.AddForce(new Vector2(-rb.velocity.x, 0));
         }
 
-        
-
-       /* //For the wall jump behavior.
-        if(Input.GetKeyDown(KeyCode.Space) && WallJumpLeftReady)
-        {
        
-        }
-        else if (Input.GetKeyDown(KeyCode.Space) && WallJumpRightReady)
-        {
-       
-        } */
     }
 }
