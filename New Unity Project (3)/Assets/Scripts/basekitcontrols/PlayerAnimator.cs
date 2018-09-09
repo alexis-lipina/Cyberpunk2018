@@ -4,21 +4,14 @@ using UnityEngine;
 
 public class PlayerAnimator : MonoBehaviour {
 
-    private Animator bodyAnimator;
-    private Animator legsAnimator;
-    private Vector2 movement;
+    private Animator bodyAnimator; //ref to animator component in body
+    private Animator legsAnimator; //ref to animator component in legs
+    private Vector2 movement; //move Velocity of the player
 
+    /// <summary>
+    /// set the moveVector to the players velocity
+    /// </summary>
     public Vector2 MoveVector { set { movement = value; } }
-
-    public void Punch()
-    {
-        bodyAnimator.SetTrigger("Punch");
-    }
-
-    public void Shoot()
-    {
-        bodyAnimator.SetTrigger("Shoot");
-    }
 
     // Use this for initialization
     void Start () {
@@ -27,11 +20,29 @@ public class PlayerAnimator : MonoBehaviour {
         movement = new Vector2(0, 0);
     }
 	
-	// Update is called once per frame
+    /// <summary>
+    /// updates the x and y velocities in animators to match player
+    /// </summary>
 	void Update () {
         bodyAnimator.SetFloat("xVelocity", movement.x);
         bodyAnimator.SetFloat("yVelocity", movement.y);
         legsAnimator.SetFloat("xVelocity", movement.x);
         legsAnimator.SetFloat("yVelocity", movement.y);
+    }
+
+    /// <summary>
+    /// animates punching
+    /// </summary>
+    public void Punch()
+    {
+        bodyAnimator.SetTrigger("Punch");
+    }
+
+    /// <summary>
+    /// animates shooting
+    /// </summary>
+    public void Shoot()
+    {
+        bodyAnimator.SetTrigger("Shoot");
     }
 }
