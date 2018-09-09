@@ -1,9 +1,9 @@
 fileFormatVersion: 2
 <<<<<<< HEAD
-guid: 2eae8443515844e459be4031342902e0
+guid: e5ae1da76144faa4689a792d0d22cb1a
 =======
-guid: 04b5c48f104d6a440ba46e8e02649130
->>>>>>> 5f00a1a6184f70b8c43d016d268bb4895b3c3abe
+guid: 4d0dea5492085084f98035476405ceed
+>>>>>>> 06e499e18c8b27f60d7b1b8897bf96f1941d44ea
 TextureImporter:
   fileIDToRecycleName: {}
   externalObjects: {}
@@ -39,7 +39,7 @@ TextureImporter:
     filterMode: -1
 =======
     filterMode: 0
->>>>>>> 5f00a1a6184f70b8c43d016d268bb4895b3c3abe
+>>>>>>> 06e499e18c8b27f60d7b1b8897bf96f1941d44ea
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -57,7 +57,7 @@ TextureImporter:
   spritePixelsToUnits: 100
 =======
   spritePixelsToUnits: 16
->>>>>>> 5f00a1a6184f70b8c43d016d268bb4895b3c3abe
+>>>>>>> 06e499e18c8b27f60d7b1b8897bf96f1941d44ea
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -101,7 +101,7 @@ TextureImporter:
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
->>>>>>> 5f00a1a6184f70b8c43d016d268bb4895b3c3abe
+>>>>>>> 06e499e18c8b27f60d7b1b8897bf96f1941d44ea
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -114,10 +114,10 @@ TextureImporter:
     physicsShape: []
     bones: []
 <<<<<<< HEAD
-    spriteID: a42ccbafc0d1df443a1b2ec2bc127f81
+    spriteID: 6f560b2a3ac200c4eab2293e60733067
 =======
-    spriteID: c55dcc112ed3df14f8c30275790d1b71
->>>>>>> 5f00a1a6184f70b8c43d016d268bb4895b3c3abe
+    spriteID: 4434fc1ef5f4b9341b6e7ad6d395ae10
+>>>>>>> 06e499e18c8b27f60d7b1b8897bf96f1941d44ea
     vertices: []
     indices: 
     edges: []

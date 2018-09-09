@@ -35,6 +35,9 @@ public class HorizontalMovement : MonoBehaviour
     //They are functionally the same as the ones found in WallJump.cs
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        //Reset HasHappened
+        HasWallJumped = false;
+
         //make sure a regular jump ins't possible
         int casthits = castingCollider.Cast(new Vector2(0, -1), raycastHit2s, 1);
 
