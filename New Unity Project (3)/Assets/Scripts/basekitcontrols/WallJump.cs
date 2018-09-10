@@ -20,8 +20,8 @@ public class WallJump : MonoBehaviour
     RaycastHit2D[] raycastHit2s = new RaycastHit2D[20];
 
     //Keep track of the player's ability to Wall Jump
-    private bool WallJumpLeftReady = false;
-    private bool WallJumpRightReady = false;
+    public bool WallJumpLeftReady = false;
+    public bool WallJumpRightReady = false;
     private bool JumpPossible = false;
     // Use this for initialization
     void Start ()
@@ -104,7 +104,7 @@ public class WallJump : MonoBehaviour
             rayHit = raycastHit2s[i];
 
 
-            if (collision.gameObject.tag == "Ground" && rayHit.fraction < 0.25)
+            if (collision.gameObject.tag == "Ground" && System.Math.Abs(rayHit.point.y - rayHit.centroid.y) < 0.25)
             {
                 JumpPossible = true;
             }
@@ -148,6 +148,11 @@ public class WallJump : MonoBehaviour
             }
             i++;
         }
+        if(JumpPossible)
+        {
+            WallJumpLeftReady = false;
+            WallJumpRightReady = false;
+        }
     }
 
     //make sure to set the flags equal to false
@@ -172,9 +177,9 @@ public class WallJump : MonoBehaviour
             //reset the velocity so the wall jump has the intended effect
             rb.velocity = new Vector2(0, 0);
             rb.AddForce(new Vector2(HorizontalForce, JumpForce), ForceMode2D.Impulse);
-             
-            
-            
+
+            Debug.Log("Left Wall Jump");
+
             WallJumpLeftReady = false;
         }
         else if (Input.GetKeyDown(KeyCode.Space) && WallJumpRightReady && !JumpPossible)
@@ -183,8 +188,9 @@ public class WallJump : MonoBehaviour
             rb.velocity = new Vector2(0, 0);
            
             rb.AddForce(new Vector2(-HorizontalForce, JumpForce), ForceMode2D.Impulse);
-            
-            
+
+            Debug.Log("Right Wall Jump");
+
             WallJumpRightReady = false;
         } 
     }
