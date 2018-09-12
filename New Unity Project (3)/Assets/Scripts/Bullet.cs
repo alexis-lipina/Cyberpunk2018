@@ -13,6 +13,7 @@ public class Bullet : MonoBehaviour {
         if (collision.tag == "Player")
         {
             //Damage the player
+            Destroy(gameObject);
         }
         else if (collision.isTrigger == false)
         {
