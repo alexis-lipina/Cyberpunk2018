@@ -48,18 +48,18 @@ public class Enemy : MonoBehaviour
         if (collision.tag == "Player")
         {
             player = collision.transform;
-            /*RaycastHit2D[] casts = Physics2D.RaycastAll(new Vector2(transform.position.x, transform.position.y + 0.33f), new Vector2(player.position.x - transform.position.x, player.position.y - transform.position.y));
+            RaycastHit2D[] casts = Physics2D.RaycastAll(new Vector2(transform.position.x, transform.position.y + 0.33f), new Vector2(player.position.x - transform.position.x, player.position.y - transform.position.y));
 
             foreach(RaycastHit2D cast in casts)
             {
-                Debug.Log("VisionRay:\nTag: " + cast.collider.tag + "\nName: " + cast.collider.name);
+                //Debug.Log("VisionRay:\nTag: " + cast.collider.tag + "\nName: " + cast.collider.name);
 
                 if (cast.collider.tag == "Player")
-                {*/
+                {
                     playerSighted = true;
                     controller.SetBool("PlayerSighted", true);
-                /*}
-            }*/
+                }
+            }
         }
     }
 
@@ -114,7 +114,7 @@ public class Enemy : MonoBehaviour
                     controller.SetFloat("SpeedMultiplier", 1);
                     if (distance < minAttackRange)
                     {
-                        RaycastHit2D cast = Physics2D.RaycastAll(new Vector2(transform.position.x + (0.75f * direction.x / distance), transform.position.y), Vector2.down)[1];
+                        RaycastHit2D cast = Physics2D.RaycastAll(new Vector2((transform.position.x + (0.75f * direction.x / distance)), transform.position.y), Vector2.down)[1];
 
                         if (cast.distance < 1)
                         {
@@ -190,12 +190,12 @@ public class Enemy : MonoBehaviour
         timePassed = 0;
     }
 
-    //private void OnDrawGizmos()
-    //{
-    //    Gizmos.DrawWireSphere(new Vector3(GetComponent<CircleCollider2D>().offset.x, GetComponent<CircleCollider2D>().offset.y, 0) + transform.position, GetComponent<CircleCollider2D>().radius);
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(new Vector3(GetComponent<CircleCollider2D>().offset.x, GetComponent<CircleCollider2D>().offset.y, 0) + transform.position, GetComponent<CircleCollider2D>().radius);
 
-    //    Gizmos.color = Color.green;
+        Gizmos.color = Color.green;
 
-    //    Gizmos.DrawRay(new Vector3(transform.position.x, transform.position.y + 0.33f, 0), new Vector3(player.position.x - transform.position.x, player.position.y - transform.position.y, 0));
-    //}
+        Gizmos.DrawRay(new Vector3(transform.position.x, transform.position.y + 0.33f, 0), new Vector3(player.position.x - transform.position.x, player.position.y - transform.position.y, 0));
+    }
 }
