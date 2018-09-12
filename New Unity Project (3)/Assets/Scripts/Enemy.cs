@@ -42,31 +42,33 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    //When a player enters the trigger it is sighted I will add raycasting for sight later
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
+        if(collision.tag == "Player")
         {
-            player = collision.transform;
-            /*RaycastHit2D[] casts = Physics2D.RaycastAll(new Vector2(transform.position.x, transform.position.y + 0.33f), new Vector2(player.position.x - transform.position.x, player.position.y - transform.position.y));
-
-            foreach(RaycastHit2D cast in casts)
+            if (player == null)
             {
-                Debug.Log("VisionRay:\nTag: " + cast.collider.tag + "\nName: " + cast.collider.name);
+                player = collision.transform;
+            }
 
-                if (cast.collider.tag == "Player")
-                {*/
-                    playerSighted = true;
-                    controller.SetBool("PlayerSighted", true);
-                /*}
-            }*/
+            RaycastHit2D cast = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y + 0.33f), new Vector2(player.position.x - transform.position.x, player.position.y - transform.position.y));
+
+            if (cast.collider.tag == "Player")
+            {
+                playerSighted = true;
+                controller.SetBool("PlayerSighted", true);
+            }
+            else
+            {
+                playerSighted = false;
+                controller.SetBool("PlayerSighted", false);
+            }
         }
     }
 
-    //When a player exits the trigger is is unsighted
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
+        if(collision.transform.tag == "Player")
         {
             playerSighted = false;
             controller.SetBool("PlayerSighted", false);
@@ -77,6 +79,7 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         timePassed += Time.deltaTime;
+        controller.SetFloat("SpeedMultiplier", 1);
 
         if (playerSighted)
         {
@@ -94,7 +97,7 @@ public class Enemy : MonoBehaviour
 
             if (distance > attackRange)
             {
-                RaycastHit2D cast = Physics2D.RaycastAll(new Vector2(transform.position.x + (0.75f * direction.x / distance), transform.position.y), Vector2.down)[1];
+                RaycastHit2D cast = Physics2D.Raycast(new Vector2(transform.position.x + (0.75f * direction.x / distance), transform.position.y), Vector2.down);
 
                 if(cast.distance < 1)
                 {
@@ -111,18 +114,20 @@ public class Enemy : MonoBehaviour
             {
                 if (ranged)
                 {
-                    controller.SetFloat("SpeedMultiplier", 1);
                     if (distance < minAttackRange)
                     {
-                        RaycastHit2D cast = Physics2D.RaycastAll(new Vector2(transform.position.x + (0.75f * direction.x / distance), transform.position.y), Vector2.down)[1];
+                        RaycastHit2D cast = Physics2D.Raycast(new Vector2((transform.position.x + (-0.75f * direction.x / distance)), transform.position.y), Vector2.down);
 
                         if (cast.distance < 1)
                         {
                             rigidBody.velocity = new Vector2(direction.x / (-1 * distance * 1.33f), rigidBody.velocity.y) * moveForce;
+                            controller.SetFloat("SpeedMultiplier", -0.75f);
+                            controller.SetBool("InAttackRange", false);
                         }
-                        rigidBody.velocity = new Vector2(direction.x / (-1 * distance * 1.33f), rigidBody.velocity.y) * moveForce;
-                        controller.SetFloat("SpeedMultiplier", -0.75f);
-                        controller.SetBool("InAttackRange", false);
+                        else
+                        {
+                            controller.SetBool("InAttackRange", true);
+                        }
                     }
                     else
                     {
@@ -158,20 +163,24 @@ public class Enemy : MonoBehaviour
         if (patrol)
         {
             //Check for edge
-            RaycastHit2D cast = Physics2D.RaycastAll(new Vector2(transform.position.x + (0.75f * patrolDirection), transform.position.y), Vector2.down)[1];
+            RaycastHit2D[] casts = new RaycastHit2D[] 
+                {
+                Physics2D.Raycast(new Vector2(transform.position.x + (0.75f * patrolDirection), transform.position.y), Vector2.down),
+                Physics2D.Raycast(new Vector2(transform.position.x + (0.75f * patrolDirection), transform.position.y), new Vector2(patrolDirection, 0))
+                };
 
-            if (cast.distance > 1)
+            if (patrolDirection >= 0)
+            {
+                renderer.flipX = false;
+            }
+            else
+            {
+                renderer.flipX = true;
+            }
+
+            if (casts[0].distance > 1 || casts[1].distance < 0.5f)
             {
                 patrolDirection *= -1;
-
-                if (renderer.flipX)
-                {
-                    renderer.flipX = false;
-                }
-                else
-                {
-                    renderer.flipX = true;
-                }
             }
         }
 
