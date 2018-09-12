@@ -5,7 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+<<<<<<< HEAD
   - Terrain
+=======
+  - New tag
+  - Ground
+>>>>>>> 43c717708311edbd90741dfa2bf9a867059d5d3c
   layers:
   - Default
   - TransparentFX

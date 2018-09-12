@@ -16,7 +16,7 @@ public class Jump : MonoBehaviour
     RaycastHit2D rayHit;
     RaycastHit2D[] raycastHit2s = new RaycastHit2D[20];
     private bool JumpReady = false;
-    
+    private bool colliding = false;
     
     // Use this for initialization
     void Start ()
@@ -53,13 +53,33 @@ public class Jump : MonoBehaviour
             rayHit = raycastHit2s[i];
             
             
-            if (collision.gameObject.tag == "Ground" && rayHit.fraction < 0.25)
+            if (collision.gameObject.tag == "Ground" && System.Math.Abs(rayHit.point.y - rayHit.centroid.y) < 0.25)
             {
                 JumpReady = true;
-                
+                Debug.Log("Jump Reset by Enter2D");
+                colliding = true;
             }
             i++;
         }
+        
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        bool wjright = gameObject.GetComponent<WallJump>().WallJumpRightReady;
+        bool wjleft = gameObject.GetComponent<WallJump>().WallJumpLeftReady;
+
+        if (collision.gameObject.tag == "Ground" && !wjright && !wjleft )
+        {
+            JumpReady = true;    
+            Debug.Log("Jump Reset by Stay2D");
+            colliding = true;
+        }
+        else if(collision.gameObject.tag == "Ground")
+        {
+            colliding = true;
+        }
+       
         
     }
 
@@ -68,6 +88,7 @@ public class Jump : MonoBehaviour
        if( collision.gameObject.tag == "Ground" )
        {
             JumpReady = false;
+            Debug.Log("JumpReady false because of Exit2D");
        }
     }
 
@@ -81,26 +102,28 @@ public class Jump : MonoBehaviour
             JumpReady = false;
         }
 
-        try
-        {
-            castingCollider.Cast(new Vector2(0, -1), raycastHit2s);
-        }
-        catch
-        {
-            
-        }
-        
-        rayHit = raycastHit2s[0];
-        if( rayHit.fraction < 0.25 )
-        {
-            JumpReady = true;
-            
-        }
-        else
-        {
-            //updates everyframe, so if we walk off we need to set it to false
-            JumpReady = false; 
-        }
+        float distance = 1.0f;
+        castingCollider.Cast(new Vector2(0, -1), raycastHit2s, distance);
+       
+     
+    
+       rayHit = raycastHit2s[0];
+       if( System.Math.Abs(rayHit.point.y - rayHit.centroid.y) < 0.1f && rayHit.collider != null )
+       {
+           JumpReady = true;
+             Debug.Log("Jump Reset by Update");
+       
+       }
+       else
+       {
+            if(!colliding)
+            {
+                //updates everyframe, so if we walk off we need to set it to false
+                JumpReady = false;
+                Debug.Log("Jump false by Update");
+            }
+          
+       }
     }
     private void OnDrawGizmos()
     {
