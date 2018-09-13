@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BasicProjectile : MonoBehaviour
+public class BasicProjectile : Implant
 {
     [SerializeField] private List<Projectile> projectilePool;
 

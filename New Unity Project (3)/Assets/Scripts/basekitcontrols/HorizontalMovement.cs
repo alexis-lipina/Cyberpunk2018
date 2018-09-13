@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class HorizontalMovement : MonoBehaviour
+public class HorizontalMovement : Implant
 {
-    
+    [SerializeField] private GameObject UI;
+
     private Rigidbody2D rb;
     [SerializeField]
     private float WalkForce;
@@ -168,6 +169,26 @@ public class HorizontalMovement : MonoBehaviour
     // Update is called once per frame
     void Update ()
     {
+        if(Input.GetKeyDown(KeyCode.P))
+        {
+            if(Time.timeScale == 0)
+            {
+                Time.timeScale = 1;
+                UI.SetActive(false);
+            }
+            else
+            {
+                Time.timeScale = 0;
+                UI.SetActive(true);
+            }
+        }
+        if(Time.timeScale == 0) { return; }
+
+
+
+
+
+
         if(Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
             if (Input.GetKeyDown(KeyCode.Space) && WallJumpRightReady && !JumpPossible)
