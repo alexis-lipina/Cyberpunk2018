@@ -42,7 +42,8 @@ public class Punch : MonoBehaviour {
     {
 		if( !PunchOver && Input.GetMouseButtonDown(0) && !punchCollider.enabled)
         {
-            punchCollider.enabled = true; 
+            punchCollider.enabled = true;
+            gameObject.GetComponent<PlayerAnimator>().Punch();
         }
       
         if(!PunchOver && punchCollider.enabled )

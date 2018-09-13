@@ -12,7 +12,7 @@ public class BasicProjectile : MonoBehaviour
 	void Update ()
     {
         //shoots the bullet when you click
-		if(Input.GetMouseButtonDown(0))
+		if(Input.GetMouseButtonDown(1))
         {
             Projectile projectile = projectilePool[projectilePool.Count - 1];
             projectilePool.RemoveAt(projectilePool.Count - 1);
@@ -22,6 +22,8 @@ public class BasicProjectile : MonoBehaviour
             projectile.transform.localPosition = new Vector3(.2f * transform.GetComponent<HorizontalMovement>().LeftRight, 0);
 
             projectile.Shoot(1 * transform.GetComponent<HorizontalMovement>().LeftRight);
+
+            gameObject.GetComponent<PlayerAnimator>().Shoot();
         }
 	}
 }
