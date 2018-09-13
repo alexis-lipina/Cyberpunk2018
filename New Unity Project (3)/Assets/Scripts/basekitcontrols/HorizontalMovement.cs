@@ -168,7 +168,7 @@ public class HorizontalMovement : MonoBehaviour
     // Update is called once per frame
     void Update ()
     {
-        if(  Input.GetKey(KeyCode.RightArrow) )
+        if(Input.GetKey(KeyCode.RightArrow))
         {
             if (Input.GetKeyDown(KeyCode.Space) && WallJumpRightReady && !JumpPossible)
             {
@@ -185,13 +185,14 @@ public class HorizontalMovement : MonoBehaviour
                 rb.velocity = new Vector2(0, rb.velocity.y);
                 rb.AddForce(new Vector2(WalkForce, 0), ForceMode2D.Impulse);
                 LeftRight = 1;
+               
             }
             
         }
         else
-        if( Input.GetKey(KeyCode.LeftArrow) )
+        if(Input.GetKey(KeyCode.LeftArrow))
         {
-            
+
             if (Input.GetKeyDown(KeyCode.Space) && WallJumpLeftReady && !JumpPossible)
             {
                 HasWallJumped = true;
@@ -214,6 +215,6 @@ public class HorizontalMovement : MonoBehaviour
             rb.AddForce(new Vector2(-rb.velocity.x, 0));
         }
 
-       
+        gameObject.GetComponent<PlayerAnimator>().MoveVector += rb.velocity; //animate the player movement
     }
 }
