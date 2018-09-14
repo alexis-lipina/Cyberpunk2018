@@ -11,7 +11,6 @@ public class EquipmentSystem : MonoBehaviour
     private Implant equipmentSlot3;
 
     [SerializeField] Implant jump;
-    [SerializeField] Implant horizontal;
 
     /// <summary>
     /// Disables an implant

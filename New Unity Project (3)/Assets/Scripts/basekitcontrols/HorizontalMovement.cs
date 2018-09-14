@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class HorizontalMovement : MonoBehaviour
+public class HorizontalMovement : Implant
 {
-    
+    [SerializeField] private GameObject UI;
+
     private Rigidbody2D rb;
     [SerializeField]
     private float WalkForce;
@@ -168,7 +169,27 @@ public class HorizontalMovement : MonoBehaviour
     // Update is called once per frame
     void Update ()
     {
-        if(  Input.GetKey(KeyCode.RightArrow) )
+        if(Input.GetKeyDown(KeyCode.P))
+        {
+            if(Time.timeScale == 0)
+            {
+                Time.timeScale = 1;
+                UI.SetActive(false);
+            }
+            else
+            {
+                Time.timeScale = 0;
+                UI.SetActive(true);
+            }
+        }
+        if(Time.timeScale == 0) { return; }
+
+
+
+
+
+
+        if(Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
             if (Input.GetKeyDown(KeyCode.Space) && WallJumpRightReady && !JumpPossible)
             {
@@ -185,13 +206,14 @@ public class HorizontalMovement : MonoBehaviour
                 rb.velocity = new Vector2(0, rb.velocity.y);
                 rb.AddForce(new Vector2(WalkForce, 0), ForceMode2D.Impulse);
                 LeftRight = 1;
+               
             }
             
         }
         else
-        if( Input.GetKey(KeyCode.LeftArrow) )
+        if(Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
-            
+
             if (Input.GetKeyDown(KeyCode.Space) && WallJumpLeftReady && !JumpPossible)
             {
                 HasWallJumped = true;
@@ -214,6 +236,17 @@ public class HorizontalMovement : MonoBehaviour
             rb.AddForce(new Vector2(-rb.velocity.x, 0));
         }
 
-       
+
+
+
+
+
+
+
+
+
+
+
+        gameObject.GetComponent<PlayerAnimator>().MoveVector /*+*/= rb.velocity; //animate the player movement
     }
 }

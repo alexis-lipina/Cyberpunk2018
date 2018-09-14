@@ -11,7 +11,7 @@ public class PlayerAnimator : MonoBehaviour {
     /// <summary>
     /// set the moveVector to the players velocity
     /// </summary>
-    public Vector2 MoveVector { set { movement = value; } }
+    public Vector2 MoveVector { get { return movement; } set { movement = value; } }
 
     // Use this for initialization
     void Start () {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class Jump : MonoBehaviour
+public class Jump : Implant
 {
 
 
@@ -36,6 +36,8 @@ public class Jump : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if (Time.timeScale == 0) { return; }
+
         int casthits = 0;
         try
         {
