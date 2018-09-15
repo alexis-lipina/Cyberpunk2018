@@ -1,11 +1,13 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class WallJump : MonoBehaviour
+public class WallJump : Implant
 {
-    
+    private List<System.Type> incompatibleTypes = new List<System.Type>();
+
     private Rigidbody2D rb;
     [SerializeField]
     private float HorizontalForce;
@@ -23,6 +25,15 @@ public class WallJump : MonoBehaviour
     public bool WallJumpLeftReady = false;
     public bool WallJumpRightReady = false;
     private bool JumpPossible = false;
+
+    public override List<Type> IncompatibleTypes
+    {
+        get
+        {
+            return incompatibleTypes;
+        }
+    }
+
     // Use this for initialization
     void Start ()
     {

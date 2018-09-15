@@ -1,10 +1,13 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class HorizontalMovement : Implant
 {
+    private List<System.Type> incompatibleTypes = new List<System.Type>();
+
     [SerializeField] private GameObject UI;
 
     private Rigidbody2D rb;
@@ -24,6 +27,14 @@ public class HorizontalMovement : Implant
     private bool WallJumpLeftReady = false;
     private bool WallJumpRightReady = false;
     private bool JumpPossible = false;
+
+    public override List<Type> IncompatibleTypes
+    {
+        get
+        {
+            return incompatibleTypes;
+        }
+    }
 
     // Use this for initialization
     void Start ()

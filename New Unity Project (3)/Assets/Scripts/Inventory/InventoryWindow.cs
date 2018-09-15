@@ -140,12 +140,41 @@ public class InventoryWindow : MonoBehaviour
             implant.gameObject.GetComponent<FollowMouse>().Following = false;
 
             //disable component incase it was being removed
-            playerEquipment.DisableImplant(implant.gameObject.name, 3);
+            playerEquipment.DisableImplant(implant.gameObject.name, 0);
         }
     }
 
     public void SendBackToInventory(int equipmentSlot)
     {
+        switch (equipmentSlot)
+        {            
+            case 1:
+                Transform implant1 = equipmentSlot1.transform.GetChild(0);
 
+                implant1.transform.SetParent(inventoryPanel.transform, false);
+                implant1.gameObject.GetComponent<FollowMouse>().Following = false;
+
+                //disable component incase it was being removed
+                //playerEquipment.DisableImplant(implant1.gameObject.name, 3);
+                break;
+            case 2:
+                Transform implant2 = equipmentSlot2.transform.GetChild(0);
+
+                implant2.transform.SetParent(inventoryPanel.transform, false);
+                implant2.gameObject.GetComponent<FollowMouse>().Following = false;
+
+                //disable component incase it was being removed
+                //playerEquipment.DisableImplant(implant2.gameObject.name, 3);
+                break;
+            case 3:
+                Transform implant3 = equipmentSlot3.transform.GetChild(0);
+
+                implant3.transform.SetParent(inventoryPanel.transform, false);
+                implant3.gameObject.GetComponent<FollowMouse>().Following = false;
+
+                //disable component incase it was being removed
+                //playerEquipment.DisableImplant(implant.gameObject.name, 3);
+                break;
+        }
     }
 }

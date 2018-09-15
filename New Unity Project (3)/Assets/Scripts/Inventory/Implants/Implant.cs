@@ -5,7 +5,7 @@ using System;
 
 public abstract class Implant : MonoBehaviour
 {
-    protected List<Type> incompatibleTypes = new List<Type>();
+    //[SerializeField] protected List<Type> incompatibleTypes = new List<Type>();
 
-    public List<Type> IncompatibleTypes { get { return incompatibleTypes; } set { incompatibleTypes = value; } }
+    public abstract List<Type> IncompatibleTypes { get; }
 }

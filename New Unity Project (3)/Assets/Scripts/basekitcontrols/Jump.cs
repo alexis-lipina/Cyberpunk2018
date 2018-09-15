@@ -1,11 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class Jump : Implant
 {
-
+    private List<System.Type> incompatibleTypes = new List<System.Type>() { typeof(Jump) };
 
     [SerializeField]
     private CircleCollider2D castingCollider;
@@ -17,7 +18,15 @@ public class Jump : Implant
     RaycastHit2D[] raycastHit2s = new RaycastHit2D[20];
     private bool JumpReady = false;
     private bool colliding = false;
-    
+
+    public override List<Type> IncompatibleTypes
+    {
+        get
+        {
+            return incompatibleTypes;
+        }
+    }
+
     // Use this for initialization
     void Start ()
     {

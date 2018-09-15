@@ -13325,9 +13325,9 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 774702993}
   m_Script: {fileID: 11500000, guid: 8c272a91c287e6a42bca9d94d17e86f6, type: 3}
---- !u!50 &938348581 stripped
-Rigidbody2D:
-  m_CorrespondingSourceObject: {fileID: 50451892907047382, guid: 0ad2cd47d9801b849aa08bd9d6b460bb,
+--- !u!58 &938348582 stripped
+CircleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 58553396334698110, guid: 0ad2cd47d9801b849aa08bd9d6b460bb,
     type: 2}
   m_PrefabInternal: {fileID: 774702993}
 --- !u!114 &938348583
@@ -13341,6 +13341,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e7220481610d174191d51b7490cb356, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventoryWindow: {fileID: 470022870}
+  equipmentSlot1: {fileID: 938348579}
+  equipmentSlot2: {fileID: 0}
+  equipmentSlot3: {fileID: 0}
   jump: {fileID: 938348579}
 --- !u!114 &938348584
 MonoBehaviour:
@@ -13353,8 +13357,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f74ddeb0ff261045bc9ed05a72e8afd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 938348581}
-  jumpForce: 10
+  castingCollider: {fileID: 938348582}
+  JumpForce: 10
 --- !u!1001 &1108785509
 Prefab:
   m_ObjectHideFlags: 0
